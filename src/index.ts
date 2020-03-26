@@ -10,5 +10,5 @@ console.log(
 );
 
 export default {
-	isBoolean
-}
+  isBoolean
+};
