@@ -1,10 +1,14 @@
 import { makeObjectReadOnly } from './utils/readOnly';
+import { isBoolean } from './utils/isBoolean';
 
 const person = {
   name: 'Tony',
-  age: 28,
 };
 const myself = makeObjectReadOnly(person);
 console.log(
-  `Hello World from index.ts i am ${myself.name} and me ${myself.age} years old`,
+  `Hello World from index.ts i am ${myself.name}`,
 );
+
+export default {
+	isBoolean
+}

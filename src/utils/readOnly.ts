@@ -1,6 +1,5 @@
 interface Person {
   name: string;
-  age: number;
 }
 
 type ReadOnly<T> = {
