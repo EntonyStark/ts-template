@@ -1,9 +1,13 @@
 {
   "name": "npm-pack-builder",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "main": "build/index.umd.js",
   "types": "build/index.d.ts",
-  "homepage": "https://github.com/EntonyStark/ts-template",
+  "homepage": "https://github.com/EntonyStark/ts-template#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EntonyStark/ts-template.git"
+  },
   "files": [
     "build"
   ],
@@ -52,7 +56,11 @@
     "transform": {
       ".ts": "ts-jest"
     },
-    "testRegex": ".*\\.test\\.ts$"
+    "testRegex": ".*\\.test\\.ts$",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ]
   },
   "lint-staged": {
     "src/**/*.ts": [
