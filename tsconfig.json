@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"outDir": "dist",
+		"strict": true,
+		"sourceMap": true,
+		"declaration": true,
+		"target": "ESNext",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"types": ["jest"],
+		"allowSyntheticDefaultImports": true,
+		"plugins": [
+			{
+				"name": "typescript-tslint-plugin"
+			}
+		],
+		"lib": ["ESNext", "DOM"]
+	},
+	"include": ["src"]
+}
