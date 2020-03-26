@@ -1,6 +1,6 @@
 interface Person {
   name: string;
-  age: string;
+  age: number;
 }
 
 type ReadOnly<T> = {
@@ -8,4 +8,5 @@ type ReadOnly<T> = {
 };
 
 // export const makeObjectReadOnly = (obj: Person): Readonly<Person> => Object.freeze(obj);
-export const makeObjectReadOnly = (obj: Person): ReadOnly<Person> => Object.freeze(obj);
+export const makeObjectReadOnly = (obj: Person): ReadOnly<Person> =>
+  Object.freeze(obj);

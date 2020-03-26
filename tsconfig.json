@@ -5,9 +5,9 @@
 		"sourceMap": true,
 		"declaration": true,
 		"target": "ESNext",
-		"module": "commonjs",
+		"module": "ESNext",
 		"moduleResolution": "node",
-		"types": ["jest"],
+		"types": ["node","jest"],
 		"allowSyntheticDefaultImports": true,
 		"plugins": [
 			{
@@ -16,5 +16,5 @@
 		],
 		"lib": ["ESNext", "DOM"]
 	},
-	"include": ["src"]
+	"files": ["src/index.ts"]
 }

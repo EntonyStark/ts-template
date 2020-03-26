@@ -1,53 +1,60 @@
 {
-	"name": "console-cli",
-	"version": "1.0.0",
-	"description": "",
-	"main": "dist/index.js",
-	"scripts": {
-		"test": "jest",
-		"test:watch": "npm run test -- --watchAll",
-		"build": "npm run clean && npm run lint && tsc",
-		"clean": "rimraf dist/*",
-		"lint": "tslint -c tslint.json -p tsconfig.json --fix",
-		"dev": "nodemon --watch src -e ts, --exec npm run dev:start",
-		"dev:start": "npm run build && npm run start",
-		"start": "node ."
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"@types/jest": "^25.1.4",
-		"@types/node": "^13.9.3",
-		"husky": "^4.2.3",
-		"jest": "^25.2.1",
-		"lint-staged": "^10.0.9",
-		"nodemon": "^2.0.2",
-		"prettier": "^2.0.2",
-		"rimraf": "^3.0.2",
-		"ts-jest": "^25.2.1",
-		"tslint": "^6.1.0",
-		"typescript": "^3.8.3",
-		"typescript-tslint-plugin": "^0.5.5"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "npm run test && lint-staged"
-		}
-	},
-	"jest": {
-		"moduleFileExtensions": [
-			"ts",
-			"js"
-		],
-		"transform": {
-			".ts": "ts-jest"
-		},
-		"testRegex": ".*\\.test\\.ts$"
-	},
-	"lint-staged": {
-		"src/**/*.ts": [
-			"prettier --single-quote --semi --trailing-comma all --write"
-		]
-	}
+  "name": "@entony/typescript-template",
+  "version": "1.0.0",
+  "main": "build/index.umd.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watchAll",
+    "build": "npm run clean && tsc -p tsconfig.json && rollup -c rollup.config.js",
+    "postbuild": "cp dist/*.d.ts build/",
+    "clean": "rimraf dist/* && rimraf build/*",
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "dev": "nodemon --watch src -e ts, --exec npm run dev:start",
+    "dev:start": "npm run build && npm run start",
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "EntonyStark",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.3",
+    "husky": "^4.2.3",
+    "jest": "^25.2.1",
+    "lint-staged": "^10.0.9",
+    "nodemon": "^2.0.2",
+    "prettier": "^2.0.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.2.0",
+    "rollup-plugin-sourcemaps": "^0.5.0",
+    "ts-jest": "^25.2.1",
+    "tslint": "^6.1.0",
+    "typescript": "^3.8.3",
+    "typescript-tslint-plugin": "^0.5.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test && lint-staged"
+    }
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      ".ts": "ts-jest"
+    },
+    "testRegex": ".*\\.test\\.ts$"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "prettier --single-quote --semi --trailing-comma all --write"
+    ]
+  },
+  "dependencies": {},
+  "description": ""
 }
