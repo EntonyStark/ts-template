@@ -2,6 +2,7 @@
   "name": "tony-corp-ts-template",
   "version": "1.1.1",
 	"main": "build/index.umd.js",
+	"types": "build/index.d.ts",
 	"homepage": "https://github.com/EntonyStark/ts-template",
   "files": [
     "build"
