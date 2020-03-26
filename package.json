@@ -11,8 +11,7 @@
 		"lint": "tslint -c tslint.json -p tsconfig.json --fix",
 		"dev": "nodemon --watch src -e ts, --exec npm run dev:start",
 		"dev:start": "npm run build && npm run start",
-		"start": "node .",
-		"precommit": "npm run test && lint-staged"
+		"start": "node ."
 	},
 	"keywords": [],
 	"author": "",
@@ -24,11 +23,17 @@
 		"jest": "^25.2.1",
 		"lint-staged": "^10.0.9",
 		"nodemon": "^2.0.2",
+		"prettier": "^2.0.2",
 		"rimraf": "^3.0.2",
 		"ts-jest": "^25.2.1",
 		"tslint": "^6.1.0",
 		"typescript": "^3.8.3",
 		"typescript-tslint-plugin": "^0.5.5"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
 	},
 	"jest": {
 		"moduleFileExtensions": [
@@ -42,8 +47,13 @@
 	},
 	"lint-staged": {
 		"src/**/*.ts": [
-			"prettier --write --no-semi --single-quote --trailing-coma es5",
-			"git add"
+			"prettier --write prettier"
 		]
+	},
+	"prettier": {
+		"trailingComma": "es5",
+		"tabWidth": 2,
+		"semi": false,
+		"singleQuote": true
 	}
 }
