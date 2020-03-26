@@ -7,7 +7,7 @@ Also package contain types for TypeScript, you don't need install additional typ
 It is included: 
 
 * All code on Typescript
-* Jest 
+* Full configuration for Jest 
 * Pre-commits
 * Lint
 * Pullup config for all platforms
