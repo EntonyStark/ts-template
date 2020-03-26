@@ -1,7 +1,8 @@
 {
-  "name": "@entony/typescript-template",
+  "name": "tony-corp-ts-template",
   "version": "1.0.0",
-  "main": "build/index.umd.js",
+	"main": "build/index.umd.js",
+	"homepage": "https://github.com/EntonyStark/ts-template",
   "files": [
     "build"
   ],
