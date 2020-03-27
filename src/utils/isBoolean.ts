@@ -1,3 +1,3 @@
-export const isBoolean = (val: any): val is boolean => {
-  return val instanceof Boolean || val === true || val === false;
+export const isBoolean = (v: any): v is boolean => {
+  return v instanceof Boolean || v === true || v === false;
 };

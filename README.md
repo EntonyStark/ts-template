@@ -1,4 +1,15 @@
-## `isBoolean` function
+## Available utility functions
+
+```javascript
+isBoolean(),
+isArray(),
+isFunction(),
+isNullOrUndefined(),
+isObject(),
+isPrimitive(),
+isRegex(),
+isString()
+```
 
 Also package contain types for TypeScript, you don't need install additional types or use `any` annotation
 

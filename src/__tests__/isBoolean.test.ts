@@ -1,13 +1,21 @@
 import { isBoolean } from '../utils/isBoolean';
 
 describe('isBoolean()', () => {
-  it('isBoolean utility function tests', () => {
-    expect(isBoolean(new Boolean())).toBe(true);
-    expect(isBoolean(true)).toBe(true);
-    expect(isBoolean(false)).toBe(true);
-    expect(isBoolean('')).toBe(false);
-    expect(isBoolean(123)).toBe(false);
-    expect(isBoolean(undefined)).toBe(false);
-    expect(isBoolean(null)).toBe(false);
+  it('should return true when value is a boolean', () => {
+    expect(isBoolean(true)).toBeTruthy();
+    expect(isBoolean(false)).toBeTruthy();
+    expect(isBoolean(new Boolean())).toBeTruthy();
+  });
+
+  it('should return false when value is not a boolean', () => {
+    expect(isBoolean(null)).toBeFalsy();
+    expect(isBoolean(undefined)).toBeFalsy();
+    expect(isBoolean(-1)).toBeFalsy();
+    expect(isBoolean(0)).toBeFalsy();
+    expect(isBoolean(1)).toBeFalsy();
+    expect(isBoolean('')).toBeFalsy();
+    expect(isBoolean({})).toBeFalsy();
+    expect(isBoolean([])).toBeFalsy();
+    expect(isBoolean(() => null)).toBeFalsy();
   });
 });

@@ -1,6 +1,6 @@
 {
   "name": "npm-pack-builder",
-  "version": "1.1.8",
+  "version": "2.0.0",
   "main": "build/index.umd.js",
   "types": "build/index.d.ts",
   "homepage": "https://github.com/EntonyStark/ts-template#readme",
@@ -13,13 +13,14 @@
   ],
   "scripts": {
     "test": "jest",
-    "test:watch": "npm run test -- --watchAll",
+    "test:w": "npm run test -- --watchAll",
     "build": "npm run clean && tsc -p tsconfig.json && rollup -c rollup.config.js",
     "postbuild": "cp dist/*.d.ts build/",
     "clean": "rimraf dist/* && rimraf build/*",
     "dev": "nodemon --watch src -e ts, --exec npm run dev:start",
     "dev:start": "npm run build && npm run start",
-    "start": "node ."
+		"start": "node .",
+		"prettier:ts": "prettier --write './src/**/*.ts' --config ./.prettierrc"
   },
   "keywords": [
     "npm",
@@ -64,7 +65,7 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
-      "prettier --single-quote --semi --trailing-comma all --write"
+			"npm run prettier:ts"
     ]
   },
   "dependencies": {},
